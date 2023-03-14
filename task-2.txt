@@ -1,0 +1,30 @@
+
+function match($str, $key)
+{
+    $count = 0;
+    $i = 0;
+    while ($i < strlen($str)) {
+        if (substr($str, $i, strlen($key)) === $key) {
+            $count++;
+            $i += strlen($key);
+        } else {
+            $i++;
+        }
+    }
+    return $count;
+}
+
+
+$str = "tadadattaetadadadafa";
+$key = "data";
+$mathed = match($str, $key);
+echo "The pattern '{$key}' appears {$mathed} times in the text '{$str}'.";
+
+
+// The match() function takes in two parameters: text and pattern.
+// Inside the function, we initialize a count variable to 0 and an i variable to 0. The i variable is used as an index to iterate over the text string.
+// We then use a while loop to iterate over the text string, checking each substring of length len(pattern) to see if it matches the pattern string.
+// If a match is found, we increment the count variable by 1 and increase the i variable by len(pattern) to skip over the matched substring.
+// If no match is found, we simply increase the i variable by 1 to move to the next character in the text string.
+// Once the entire text string has been processed, we return the count variable, which represents the number of times the pattern string was found in the text string.
+// In summary, the algorithm works by iterating over the text string, checking for matches of the pattern string, and keeping track of the count of matches found.
